@@ -14,7 +14,10 @@ import lombok.Data;
         //Todo, enumerate the types that go here, kinda gross, but not horrible
         @Type(value = BotAdded.class, name = "bot_added"),
         @Type(value = BotChanged.class, name = "bot_changed"),
-        @Type(value = ChannelArchive.class, name = "channel_archive")
+        @Type(value = ChannelArchive.class, name = "channel_archive"),
+        @Type(value = ChannelCreated.class, name = "channel_created"),
+        @Type(value = ChannelDeleted.class, name = "channel_deleted"),
+        @Type(value = ChannelHistoryChanged.class, name = "channel_history_changed"),
 })
 @Data
 public abstract class SlackEvent {

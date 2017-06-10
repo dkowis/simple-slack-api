@@ -1,9 +1,8 @@
 package com.ullink.slack.simpleslackapi.slackapi;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.ullink.slack.simpleslackapi.slackapi.parsing.SlackApiParser;
 import org.apache.commons.lang3.text.WordUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -59,13 +58,7 @@ public class SlackAPITest {
 
     @Test
     public void objectMarshallsCorrectly() throws Exception {
-        //TODO: need a singleton with the object mapper that I can use
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.findAndRegisterModules();
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        //END TODO
-
+        ObjectMapper mapper = SlackApiParser.INSTANCE.mapper();
         //Load in the json file:
         InputStream stream = this.getClass().getResourceAsStream("/slackpayloads/" + filename);
         String payload = readEntireStream(stream);
