@@ -1,0 +1,10 @@
+{
+  "type": "bot_changed",
+  "bot": {
+    "id": "B024BE7LH",
+    "name": "hugbot",
+    "icons": {
+      "image_48": "https:\/\/slack.com\/path\/to\/hugbot_48.png"
+    }
+  }
+}
