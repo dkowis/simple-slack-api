@@ -18,6 +18,7 @@ import lombok.Data;
         @Type(value = ChannelCreated.class, name = "channel_created"),
         @Type(value = ChannelDeleted.class, name = "channel_deleted"),
         @Type(value = ChannelHistoryChanged.class, name = "channel_history_changed"),
+        @Type(value = ChannelJoined.class, name = "channel_joined"),
 })
 @Data
 public abstract class SlackEvent {
