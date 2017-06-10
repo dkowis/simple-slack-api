@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import org.apache.commons.lang3.text.WordUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +12,6 @@ import org.junit.runners.Parameterized;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,7 +19,6 @@ import java.util.stream.Collectors;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
 import static uk.co.datumedge.hamcrest.json.SameJSONAs.sameJSONAs;
-import static uk.co.datumedge.hamcrest.json.SameJSONAs.sameJSONObjectAs;
 
 @RunWith(Parameterized.class)
 public class SlackAPITest {
