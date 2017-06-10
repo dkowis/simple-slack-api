@@ -19,6 +19,13 @@ import lombok.Data;
         @Type(value = ChannelDeleted.class, name = "channel_deleted"),
         @Type(value = ChannelHistoryChanged.class, name = "channel_history_changed"),
         @Type(value = ChannelJoined.class, name = "channel_joined"),
+        @Type(value = ChannelLeft.class, name = "channel_left"),
+        @Type(value = ChannelMarked.class, name = "channel_marked"),
+        @Type(value = ChannelRename.class, name = "channel_rename"),
+        @Type(value = ChannelUnarchive.class, name = "channel_unarchive"),
+        @Type(value = CommandsChanged.class, name = "commands_changed"),
+        @Type(value = DndUpdated.class, name = "dnd_updated"),
+        @Type(value = DndUpdatedUser.class, name = "dnd_updated_user"),
 })
 @Data
 public abstract class SlackEvent {

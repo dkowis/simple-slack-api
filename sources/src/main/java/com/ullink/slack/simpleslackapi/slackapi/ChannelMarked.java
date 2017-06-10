@@ -3,10 +3,12 @@ package com.ullink.slack.simpleslackapi.slackapi;
 import lombok.Data;
 import lombok.NonNull;
 
+import java.time.OffsetDateTime;
+
 @Data
-public class ChannelArchive extends SlackEvent{
+public class ChannelMarked extends SlackEvent {
     @NonNull
     private final String channel;
     @NonNull
-    private final String user;
+    private final OffsetDateTime ts;
 }

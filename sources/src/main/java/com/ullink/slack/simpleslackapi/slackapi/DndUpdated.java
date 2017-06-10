@@ -4,9 +4,9 @@ import lombok.Data;
 import lombok.NonNull;
 
 @Data
-public class ChannelArchive extends SlackEvent{
+public class DndUpdated extends SlackEvent{
     @NonNull
-    private final String channel;
+    private String user;
     @NonNull
-    private final String user;
+    private DndStatus dndStatus;
 }

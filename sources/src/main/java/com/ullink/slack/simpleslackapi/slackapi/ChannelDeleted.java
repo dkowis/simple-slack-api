@@ -1,8 +1,10 @@
 package com.ullink.slack.simpleslackapi.slackapi;
 
 import lombok.Data;
+import lombok.NonNull;
 
 @Data
 public class ChannelDeleted extends SlackEvent {
-    private String channel;
+    @NonNull
+    private final String channel;
 }

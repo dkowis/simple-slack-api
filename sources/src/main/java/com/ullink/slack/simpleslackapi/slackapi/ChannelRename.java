@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NonNull;
 
 @Data
-public class ChannelCreated extends SlackEvent{
+public class ChannelRename extends SlackEvent {
     @NonNull
     private final Channel channel;
 }

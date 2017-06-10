@@ -32,6 +32,7 @@ public final class SlackApiParser {
                 mapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
                 mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
 
+
                 //Create a custom marshaller for the OffsetDateTime
                 Jackson8Module module8 = new Jackson8Module();
 
