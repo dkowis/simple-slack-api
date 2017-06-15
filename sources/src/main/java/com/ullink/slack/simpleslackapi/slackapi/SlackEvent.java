@@ -3,6 +3,7 @@ package com.ullink.slack.simpleslackapi.slackapi;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.ullink.slack.simpleslackapi.slackapi.message.SubMessage;
 import lombok.Data;
 
 @JsonTypeInfo(
@@ -26,6 +27,10 @@ import lombok.Data;
         @Type(value = CommandsChanged.class, name = "commands_changed"),
         @Type(value = DndUpdated.class, name = "dnd_updated"),
         @Type(value = DndUpdatedUser.class, name = "dnd_updated_user"),
+        @Type(value = EmailDomainChanged.class, name = "email_domain_changed"),
+        @Type(value = EmojiChanged.class, name = "emoji_changed"),
+        @Type(value = FileChange.class, name = "file_change"),
+        @Type(value = SubMessage.class, name = "message"),
 })
 @Data
 public abstract class SlackEvent {

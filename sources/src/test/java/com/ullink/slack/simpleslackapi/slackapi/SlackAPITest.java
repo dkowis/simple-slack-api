@@ -2,7 +2,7 @@ package com.ullink.slack.simpleslackapi.slackapi;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ullink.slack.simpleslackapi.slackapi.parsing.SlackApiParser;
+import com.ullink.slack.simpleslackapi.slackapi.parsing.SlackApiObjectMapper;
 import org.apache.commons.lang3.text.WordUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -58,7 +58,7 @@ public class SlackAPITest {
 
     @Test
     public void objectMarshallsCorrectly() throws Exception {
-        ObjectMapper mapper = SlackApiParser.INSTANCE.mapper();
+        ObjectMapper mapper = SlackApiObjectMapper.mapper();
         //Load in the json file:
         InputStream stream = this.getClass().getResourceAsStream("/slackpayloads/" + filename);
         String payload = readEntireStream(stream);
