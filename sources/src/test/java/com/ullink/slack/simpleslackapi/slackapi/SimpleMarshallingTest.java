@@ -2,6 +2,7 @@ package com.ullink.slack.simpleslackapi.slackapi;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.ullink.slack.simpleslackapi.slackapi.parsing.SlackApiObjectMapper;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -11,10 +12,8 @@ public class SimpleMarshallingTest {
 
     @Test
     public void marshallsABotAddedEvent() throws Exception {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.findAndRegisterModules();
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-
+        ObjectMapper mapper = SlackApiObjectMapper.mapper();
+        
         String json = "{\n" +
                 "    \"type\": \"bot_added\",\n" +
                 "    \"bot\": {\n" +

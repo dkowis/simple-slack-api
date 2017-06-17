@@ -3,8 +3,11 @@ package com.ullink.slack.simpleslackapi.slackapi.parsing;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.ullink.slack.simpleslackapi.slackapi.SlackEvent;
+import com.ullink.slack.simpleslackapi.slackapi.SubMessage;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.OffsetDateTime;
@@ -38,6 +41,11 @@ public final class SlackApiObjectMapper {
         //Register modules in order. Last module gets the highest priority
         mapper.registerModule(new Jdk8Module());
         mapper.registerModule(new JavaTimeModule());
+
+        SimpleModule simpleModule = new SimpleModule();
+        simpleModule.addDeserializer(SlackEvent.class, new SlackEventDeserializer(null));
+
+        mapper.registerModule(simpleModule);
 
         //This module has overrides that we might want
         mapper.registerModule(module8);
