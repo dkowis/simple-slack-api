@@ -6,7 +6,7 @@ import lombok.NonNull;
 import java.util.Optional;
 
 @Data
-public class BotMessage extends SubMessage {
+public class BotMessage extends Message {
 
     @NonNull
     private final String botId;

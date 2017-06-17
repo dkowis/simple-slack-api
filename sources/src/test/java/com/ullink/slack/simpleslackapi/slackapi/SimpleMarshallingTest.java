@@ -13,7 +13,7 @@ public class SimpleMarshallingTest {
     @Test
     public void marshallsABotAddedEvent() throws Exception {
         ObjectMapper mapper = SlackApiObjectMapper.mapper();
-        
+
         String json = "{\n" +
                 "    \"type\": \"bot_added\",\n" +
                 "    \"bot\": {\n" +

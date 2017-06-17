@@ -25,8 +25,9 @@ public enum EventType {
     EMAIL_DOMAIN_CHANGED("email_domain_changed", EmailDomainChanged.class),
     EMOJI_CHANGED_ADD("emoji_changed", "add", EmojiChangedAdd.class),
     EMOJI_CHANGED_REMOVE("emoji_changed", "remove", EmojiChangedRemove.class),
-    MESSAGE("message", Message.class),
+    MESSAGE("message", SimpleMessage.class),
     FILE_CHANGE("file_change", FileChange.class),
+    CHANNEL_ARCHIVE_MESSAGE("message", "channel_archive", ChannelArchiveMessage.class),
 
     ;
 

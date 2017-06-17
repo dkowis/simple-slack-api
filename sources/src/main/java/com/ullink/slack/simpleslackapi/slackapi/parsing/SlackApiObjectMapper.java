@@ -7,7 +7,6 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.ullink.slack.simpleslackapi.slackapi.SlackEvent;
-import com.ullink.slack.simpleslackapi.slackapi.SubMessage;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.OffsetDateTime;
